@@ -47,6 +47,39 @@ local plugins = {
     end,
   },
 
+  -- installed by user on 2023-05-16
+  {
+    "Pocco81/auto-save.nvim",
+    cmd = { "ASToggle" },
+    lazy = false,
+    event = { "TextChanged", "TextChangedI", "BufEnter", "BufLeave", "InsertEnter", "InsertChange", "InsertLeave" },
+    config = function()
+     require("auto-save").setup()
+    end,
+   },
+
+  -- installed by user on 2023-05-16
+  {
+    'codota/tabnine-nvim',
+    event = { "TextChanged", "TextChangedI", "BufEnter", "BufLeave", "InsertEnter", "InsertChange", "InsertLeave" },
+    lazy = false,
+    config = function()
+     require("tabnine").setup(
+      {
+       disable_auto_comment = true,
+       -- accept_keymap = "<Tab>",
+       accept_keymap = "<C-[>", -- Changed to avoid conflicts w/ default snippet plugins (nvim-cmp/LuaSnip)
+       dismiss_keymap = "<C-]>",
+       debounce_ms = 800,
+       suggestion_color = { gui = "#808080", cterm = 244 },
+       exclude_filetypes = { "TelescopePrompt" },
+       log_file_path = nil, -- absolute path to Tabnine log file
+      }
+     )
+    end,
+    build = "./dl_binaries.sh",
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

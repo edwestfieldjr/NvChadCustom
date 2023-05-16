@@ -12,6 +12,10 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "python",
+    "rust",
+    "c_sharp",
+    "cpp"
   },
   indent = {
     enable = true,
@@ -33,11 +37,28 @@ M.mason = {
     "typescript-language-server",
     "deno",
     "prettier",
+    "eslint-lsp",
+    "standardjs",
 
     -- c/cpp stuff
     "clangd",
     "clang-format",
+
+    -- c# stuff
+    "csharp-language-server",
+    "netcoredbg",
+
+    -- rust stuff
+    "rust-analyzer",
+    "rustfmt",
+
+    -- python stuff
+    "autopep8",
+    "pylint",
+    "python-lsp-server",
   },
+
+
 }
 
 -- git support in nvimtree
