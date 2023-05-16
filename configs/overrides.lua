@@ -39,6 +39,7 @@ M.mason = {
     "prettier",
     "eslint-lsp",
     "standardjs",
+    "tailwindcss-language-server",
 
     -- c/cpp stuff
     "clangd",
@@ -57,6 +58,12 @@ M.mason = {
     "pylint",
     "python-lsp-server",
     "pyright",
+
+    -- golang stuff
+    "gopls",
+
+    --text file stuff
+    "grammarly-languageserver",
   },
 
 
