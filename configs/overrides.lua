@@ -56,6 +56,7 @@ M.mason = {
     "autopep8",
     "pylint",
     "python-lsp-server",
+    "pyright",
   },
 
 
