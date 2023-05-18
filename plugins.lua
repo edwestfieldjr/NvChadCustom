@@ -38,6 +38,7 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
+----------------------------------------------------------------
   -- Install a plugin
   {
     "max397574/better-escape.nvim",
@@ -77,7 +78,7 @@ local plugins = {
       }
      )
     end,
-    build = "./dl_binaries.sh",
+  build = "./dl_binaries.sh",
   },
 
   -- To make a plugin not be loaded
