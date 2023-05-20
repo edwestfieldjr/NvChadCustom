@@ -83,6 +83,10 @@ M.nvimtree = {
       },
     },
   },
+
+  view = {
+    width = 25;
+  }
 }
 
 return M
