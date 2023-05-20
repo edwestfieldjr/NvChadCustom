@@ -78,9 +78,27 @@ local plugins = {
       }
      )
     end,
-  build = "./dl_binaries.sh",
+    build = "./dl_binaries.sh",
   },
 
+  -- installed by user on 2023-05-20
+  {
+    'stevearc/oil.nvim',
+    opts = {
+      view_options = {
+        show_hidden = true,
+      }
+    },
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function(this)
+      require("oil").setup(this.opts)
+      vim.keymap.set("n", "-", require("oil").open_float, { desc = "Open parent directory" })
+    end,
+    lazy = false,
+  }
+
+----------------------------------------------------------------
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
