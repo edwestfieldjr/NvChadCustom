@@ -101,12 +101,10 @@ local plugins = {
 ----------------------------------------------------------------
   -- Development plugins 
 
-  {
-    "edwestfieldjr/stackmap.nvim",
-    lazy = false,
-  }
+  -- T/B/A
 
 ----------------------------------------------------------------
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
