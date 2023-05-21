@@ -96,6 +96,14 @@ local plugins = {
       vim.keymap.set("n", "-", require("oil").open_float, { desc = "Open parent directory" })
     end,
     lazy = false,
+  },
+
+----------------------------------------------------------------
+  -- Development plugins 
+
+  {
+    "edwestfieldjr/stackmap.nvim",
+    lazy = false,
   }
 
 ----------------------------------------------------------------
