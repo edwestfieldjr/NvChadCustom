@@ -48,7 +48,7 @@ local plugins = {
     end,
   },
 
-  -- installed by user on 2023-05-16
+  -- installed by user on 2023-05-16: https://github.com/
   {
     "Pocco81/auto-save.nvim",
     cmd = { "ASToggle" },
@@ -59,16 +59,16 @@ local plugins = {
     end,
    },
 
-  -- installed by user on 2023-05-16
+  -- installed by user on 2023-05-16: https://github.com/codota/tabnine-nvim
   {
     'codota/tabnine-nvim',
     event = { "TextChanged", "TextChangedI", "BufEnter", "BufLeave", "InsertEnter", "InsertChange", "InsertLeave" },
     lazy = false,
     config = function()
-     require("tabnine").setup(
-      {
-       disable_auto_comment = true,
-       -- accept_keymap = "<Tab>",
+      require("tabnine").setup(
+        {
+          disable_auto_comment = true,
+          -- accept_keymap = "<Tab>",
        accept_keymap = "<C-[>", -- Changed to avoid conflicts w/ default snippet plugins (nvim-cmp/LuaSnip)
        dismiss_keymap = "<C-]>",
        debounce_ms = 800,
@@ -81,16 +81,23 @@ local plugins = {
     build = "./dl_binaries.sh",
   },
 
-  -- installed by user on 2023-05-20
+  -- installed by user on 2023-05-20: https://github.com/
   {
     'stevearc/oil.nvim',
     opts = {
+      default_file_explorer = false, -- already using nvim-tree
       view_options = {
         show_hidden = true,
-      }
+      },
+      float = {
+        -- Padding around the floating window
+        padding = 4,
+        max_width = 100,
+        max_height = 80,
+      },
     },
     -- Optional dependencies
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    -- dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function(this)
       require("oil").setup(this.opts)
       vim.keymap.set("n", "-", require("oil").open_float, { desc = "Open parent directory" })
