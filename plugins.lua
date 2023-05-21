@@ -1,5 +1,8 @@
 local overrides = require("custom.configs.overrides")
 
+local edit_events = { "TextChanged", "TextChangedI", "BufEnter", "BufLeave", "InsertEnter", "InsertChange", "InsertLeave" }
+
+
 ---@type NvPluginSpec[]
 local plugins = {
 
@@ -7,6 +10,8 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
+    lazy = false, -- override to ensure lsp automatically on startup
+    event = edit_events, -- override to ensure lsp automatically on new/open file
     dependencies = {
       -- format & linting
       {
@@ -53,7 +58,7 @@ local plugins = {
     "Pocco81/auto-save.nvim",
     cmd = { "ASToggle" },
     lazy = false,
-    event = { "TextChanged", "TextChangedI", "BufEnter", "BufLeave", "InsertEnter", "InsertChange", "InsertLeave" },
+    event = edit_events,
     config = function()
      require("auto-save").setup()
     end,
@@ -62,7 +67,7 @@ local plugins = {
   -- installed by user on 2023-05-16: https://github.com/codota/tabnine-nvim
   {
     'codota/tabnine-nvim',
-    event = { "TextChanged", "TextChangedI", "BufEnter", "BufLeave", "InsertEnter", "InsertChange", "InsertLeave" },
+    event = edit_events,
     lazy = false,
     config = function()
       require("tabnine").setup(

@@ -6,6 +6,7 @@ M.treesitter = {
     "lua",
     "html",
     "css",
+    "java",
     "javascript",
     "typescript",
     "tsx",
@@ -15,7 +16,9 @@ M.treesitter = {
     "python",
     "rust",
     "c_sharp",
-    "cpp"
+    "cpp",
+    "zig",
+    "sql"
   },
   indent = {
     enable = true,
@@ -49,6 +52,9 @@ M.mason = {
     "csharp-language-server",
     "netcoredbg",
 
+    -- java stuff
+    "jdtls",
+
     -- rust stuff
     "rust-analyzer",
     "rustfmt",
@@ -56,11 +62,17 @@ M.mason = {
     -- python stuff
     "autopep8",
     "pylint",
-    "python-lsp-server",
+    -- "python-lsp-server",
     "pyright",
 
     -- golang stuff
     "gopls",
+
+    -- zig stuff
+    "zls",
+
+    -- sql stuff
+    "sqlls",
 
     --text file stuff
     "grammarly-languageserver",

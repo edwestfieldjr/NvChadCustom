@@ -14,7 +14,10 @@ local servers = {
   "jsonls",
   "tailwindcss",
   "textlsp",
-  "gopls"
+  "gopls",
+  "jdtls",
+  "zls",
+  "sqlls"
 }
 
 for _, lsp in ipairs(servers) do
@@ -35,4 +38,4 @@ lspconfig.rust_analyzer.setup {
   }
 }
 -- 
--- lspconfig.pyright.setup { blabla}
+-- lspconfig.pyright.setup { blabla }
