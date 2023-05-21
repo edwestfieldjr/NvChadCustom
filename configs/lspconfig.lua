@@ -1,41 +1,83 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
-local lspconfig = require "lspconfig"
+local lspconfig = require("lspconfig")
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
-  "html",
-  "cssls",
-  "tsserver",
-  "clangd",
-  "pyright",
-  "csharp_ls",
-  "jsonls",
-  "tailwindcss",
-  "textlsp",
-  "gopls",
-  "jdtls",
-  "zls",
-  "sqlls"
-}
+  {
+    name ="html",
+  },
+  {
+    name ="cssls",
+  },
+  {
+    name = "tsserver",
+  },
+  {
+    name ="clangd",
+  },
+  {
+    name = "pyright",
+  },
+  {
+    name = "pylsp",
+    settings = {
+      pylsp = {
+        plugins = {
+          pycodestyle = {
+            ignore = {'W391'},
+            maxLineLength = 100
+          }
+        }
+      }
+    }
+  },
+  {
+   name = "csharp_ls",
+  },
+  {
+   name = "jsonls",
+  },
+  {
+   name = "tailwindcss",
+  },
+  {
+    name = "textlsp",
+  },
+  {
+    name = "gopls",
+  },
+  {
+    name = "jdtls",
+  },
+  {
+    name = "zls",
+  },
+  {
+    name = "sqlls",
+  },
+  {
+    name = "rust_analyzer",
+    -- cmd = {
+    --   "rustup",
+    --   "run",
+    --   "stable",
+    --   "rust-analyzer",
+    -- },
+    settings = {
+      ["rust-analyzer"] = {};
+    },
+  },
+ }
+
 
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  lspconfig[lsp.name].setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    cmd = lsp.cmd,
+    setttings = lsp.settings,
   }
 end
 
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = {
-    "rustup",
-    "run",
-    "stable",
-    "rust-analyzer",
-  }
-}
--- 
--- lspconfig.pyright.setup { blabla }

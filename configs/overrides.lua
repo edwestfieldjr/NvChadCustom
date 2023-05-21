@@ -62,7 +62,7 @@ M.mason = {
     -- python stuff
     "autopep8",
     "pylint",
-    -- "python-lsp-server",
+    "python-lsp-server",
     "pyright",
 
     -- golang stuff
