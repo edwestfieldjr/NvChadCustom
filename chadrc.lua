@@ -22,7 +22,7 @@ M.ui = {
           return modules.buttons() .. "" -- TBD: Insert a Display Clock Function
         end,
       }
-     end,
+    end,
   },
 }
 

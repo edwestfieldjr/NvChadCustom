@@ -16,6 +16,7 @@ local plugins = {
       -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
+        lazy = false, -- override 2023-05-22
         config = function()
           require "custom.configs.null-ls"
         end,
