@@ -6,16 +6,16 @@ local lspconfig = require("lspconfig")
 -- if you just want default config for the servers then put them in a table
 local servers = {
   {
-    name ="html",
+    name = "html",
   },
   {
-    name ="cssls",
+    name = "cssls",
   },
   {
     name = "tsserver",
   },
   {
-    name ="clangd",
+    name = "clangd",
   },
   {
     name = "pyright",
@@ -76,7 +76,7 @@ for _, lsp in ipairs(servers) do
   lspconfig[lsp.name].setup {
     on_attach = on_attach,
     capabilities = capabilities,
-    cmd = lsp.cmd,
+    -- cmd = lsp.cmd,
     setttings = lsp.settings,
   }
 end

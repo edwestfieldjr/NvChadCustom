@@ -10,6 +10,12 @@ M.ui = {
 
   hl_override = highlights.override,
   hl_add = highlights.add,
+
+  tabufline = {
+    show_numbers = false,
+    enabled = true,
+    lazyload = false,
+  },
 }
 
 M.plugins = "custom.plugins"
