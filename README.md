@@ -1,3 +1,3 @@
-# Example_config
+# This
 
-This can be used as an example custom config for NvChad, this branch is a minimal one. Do check the feature_full branch if you need all the ease in your config.
+:is a repo of my [custom config](https://nvchad.com/docs/config/walkthrough#custom_config) directory for [NvChad](https://github.com/NvChad/NvChad). 
