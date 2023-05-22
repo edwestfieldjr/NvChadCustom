@@ -8,7 +8,6 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -- Autimatically show nvim-tree file explorer on launch when opening file or buffer:
 -- https://github.com/nvim-tree/nvim-tree.lua/discussions/1517#discussion-4317419
--- (h/t: https://github.com/musjj)
 autocmd({ "BufNewFile", "BufWinEnter" }, {
   callback = function(args)
     if vim.fn.expand "%:p" ~= "" then
@@ -24,7 +23,6 @@ autocmd({ "BufNewFile", "BufWinEnter" }, {
 
 -- Fix null-ls/lsp formatter ('gq') issue:  
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/1131#issuecomment-1457584752
--- (h/t: https://github.com/willnorris)
 autocmd('LspAttach', {
   callback = function(args)
     vim.bo[args.buf].formatexpr = nil
