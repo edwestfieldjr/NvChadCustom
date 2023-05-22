@@ -19,7 +19,7 @@ M.ui = {
       local modules = require "nvchad_ui.tabufline.modules"
       return {
         buttons = function()
-          return modules.buttons() .. ""-- TBD: Insert a Display Clock Function
+          return modules.buttons() .. "" -- TBD: Insert a Display Clock Function
         end,
       }
      end,
