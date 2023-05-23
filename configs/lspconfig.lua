@@ -1,12 +1,13 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
-local lspconfig = require("lspconfig")
+local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
   {
     name = "html",
+    -- cmd = { "vscode-html-language-server", "--stdio" },
   },
   {
     name = "cssls",
@@ -26,21 +27,21 @@ local servers = {
       pylsp = {
         plugins = {
           pycodestyle = {
-            ignore = {'W391'},
-            maxLineLength = 100
-          }
-        }
-      }
-    }
+            ignore = { "W391" },
+            maxLineLength = 100,
+          },
+        },
+      },
+    },
   },
   {
-   name = "csharp_ls",
+    name = "csharp_ls",
   },
   {
-   name = "jsonls",
+    name = "jsonls",
   },
   {
-   name = "tailwindcss",
+    name = "tailwindcss",
   },
   {
     name = "textlsp",
@@ -66,18 +67,16 @@ local servers = {
     --   "rust-analyzer",
     -- },
     settings = {
-      ["rust-analyzer"] = {};
+      ["rust-analyzer"] = {},
     },
   },
- }
-
+}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp.name].setup {
     on_attach = on_attach,
     capabilities = capabilities,
-    -- cmd = lsp.cmd,
+    cmd = lsp.cmd,
     setttings = lsp.settings,
   }
 end
-
