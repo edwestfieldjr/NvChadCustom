@@ -43,7 +43,10 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
-
+  {
+    "NvChad/nvim-colorizer.lua",
+    opts = overrides.colorizer,
+  },
 ----------------------------------------------------------------
   -- Install a plugin
   {
