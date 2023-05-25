@@ -111,7 +111,8 @@ local plugins = {
       require("oil").setup(this.opts)
       vim.keymap.set("n", "-", require("oil").open_float, { desc = "Open parent directory" })
     end,
-    lazy = false,
+    -- lazy = false,
+    event = { "VeryLazy" },
   },
 
 ----------------------------------------------------------------
