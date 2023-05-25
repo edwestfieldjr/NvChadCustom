@@ -94,7 +94,7 @@ local plugins = {
   {
     'stevearc/oil.nvim',
     opts = {
-      -- default_file_explorer = false, -- already using nvim-tree
+      default_file_explorer = false, -- already using nvim-tree
       view_options = {
         show_hidden = true,
       },
