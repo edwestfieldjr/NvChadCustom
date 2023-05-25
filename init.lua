@@ -1,5 +1,11 @@
 local autocmd = vim.api.nvim_create_autocmd
 
+-- Auto resize panes when resizing nvim window
+-- autocmd("VimResized", {
+--   pattern = "*",
+--   command = "tabdo wincmd =",
+-- })
+
 -- Automatically show the nvim-tree file explorer on launch when opening file or buffer:
 -- https://github.com/nvim-tree/nvim-tree.lua/discussions/1517#discussion-4317419
 autocmd({ "BufNewFile", "BufWinEnter" }, {
@@ -14,3 +20,12 @@ autocmd({ "BufNewFile", "BufWinEnter" }, {
   end,
 })
 
+
+-- -- Fix null-ls/lsp formatter ('gq') issue:  
+-- -- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/1131#issuecomment-1457584752
+-- autocmd('LspAttach', {
+--   callback = function(args)
+--     vim.bo[args.buf].formatexpr = nil
+--   end,
+-- })
+-- -- Overall, unnecessary 

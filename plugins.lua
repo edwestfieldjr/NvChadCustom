@@ -10,13 +10,13 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
-    lazy = false, -- override to ensure lsp automatically on startup
+    -- lazy = false, -- override to ensure lsp automatically on startup
     event = edit_events, -- override to ensure lsp automatically on new/open file
     dependencies = {
       -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
-        lazy = false, -- override 2023-05-22
+        -- lazy = false, -- override 2023-05-22
         config = function()
           require "custom.configs.null-ls"
         end,
@@ -61,7 +61,7 @@ local plugins = {
   {
     "Pocco81/auto-save.nvim",
     cmd = { "ASToggle" },
-    lazy = false,
+    -- lazy = false,
     event = edit_events,
     config = function()
      require("auto-save").setup()
@@ -72,7 +72,7 @@ local plugins = {
   {
     'codota/tabnine-nvim',
     event = edit_events,
-    lazy = false,
+    -- lazy = false,
     config = function()
       require("tabnine").setup(
         {
@@ -94,7 +94,7 @@ local plugins = {
   {
     'stevearc/oil.nvim',
     opts = {
-      default_file_explorer = false, -- already using nvim-tree
+      -- default_file_explorer = false, -- already using nvim-tree
       view_options = {
         show_hidden = true,
       },
