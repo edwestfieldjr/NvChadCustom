@@ -10,7 +10,7 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
-    -- lazy = false, -- override to ensure lsp automatically on startup
+    -- lazy = false, -- override to ensure lsp automatically on startup lazy
     event = edit_events, -- override to ensure lsp automatically on new/open file
     dependencies = {
       -- format & linting
@@ -47,6 +47,11 @@ local plugins = {
   {
     "NvChad/nvim-colorizer.lua",
     opts = overrides.colorizer,
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    opts = overrides.cmp,
   },
   ----------------------------------------------------------------
   -- Install a plugin

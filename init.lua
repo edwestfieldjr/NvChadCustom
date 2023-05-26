@@ -6,8 +6,19 @@ local autocmd = vim.api.nvim_create_autocmd
 --   command = "tabdo wincmd =",
 -- })
 
--- Automatically show the nvim-tree file explorer on launch when opening file or buffer:
--- https://github.com/nvim-tree/nvim-tree.lua/discussions/1517#discussion-4317419
+-- -- Auto-format on save -- DISABLED due to undo/redo performance issues
+-- autocmd("BufWritePre", {
+--   pattern = { "*", "<buffer>" },
+--   command = "lua vim.lsp.buf.format()",
+-- })
+
+-- Load classic vim spell check
+autocmd("BufEnter", {
+  pattern = { "*", "<buffer>" },
+  command = "set spell spelllang=en_us",
+})
+
+-- Show the nvim-tree upon open
 autocmd({ "BufNewFile", "BufWinEnter" }, {
   callback = function(args)
     if vim.fn.expand "%:p" ~= "" then
@@ -20,12 +31,11 @@ autocmd({ "BufNewFile", "BufWinEnter" }, {
   end,
 })
 
-
--- -- Fix null-ls/lsp formatter ('gq') issue:  
+-- -- Fix null-ls/lsp formatter ('gq') issue:
 -- -- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/1131#issuecomment-1457584752
 -- autocmd('LspAttach', {
 --   callback = function(args)
 --     vim.bo[args.buf].formatexpr = nil
 --   end,
 -- })
--- -- Overall, unnecessary 
+-- -- Overall, Unnecessary

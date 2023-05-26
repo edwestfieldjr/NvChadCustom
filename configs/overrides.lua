@@ -18,7 +18,7 @@ M.treesitter = {
     "c_sharp",
     "cpp",
     "zig",
-    "sql"
+    "sql",
   },
   indent = {
     enable = true,
@@ -77,8 +77,6 @@ M.mason = {
     --text file stuff
     "grammarly-languageserver",
   },
-
-
 }
 
 -- git support in nvimtree
@@ -97,11 +95,11 @@ M.nvimtree = {
   },
 
   view = {
-    width = 25;
-  }
+    width = 25,
+  },
 }
 
--- colorizer 
+-- colorizer
 
 M.colorizer = {
   user_default_options = {
@@ -120,11 +118,25 @@ M.colorizer = {
     -- True is same as normal
     tailwind = true, -- Enable tailwind colors
     -- parsers can contain values used in |user_default_options|
-    sass = { enable = true, parsers = { "css" }, }, -- Enable sass colors
+    sass = { enable = true, parsers = { "css" } }, -- Enable sass colors
     virtualtext = "■",
     -- update color values even if buffer is not focused
     -- example use: cmp_menu, cmp_docs
-    always_update = true
+    always_update = true,
+  },
+}
+
+M.cmp = {
+  sources = {
+    {
+      name = "spell",
+      option = {
+        keep_all_entries = false,
+        enable_in_context = function()
+          return true
+        end,
+      },
+    },
   },
 }
 
