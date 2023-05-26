@@ -14,7 +14,7 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -- Load classic vim spell check
 autocmd("BufEnter", {
-  pattern = { "*", "<buffer>" },
+  pattern = { "<buffer>" },
   command = "set spell spelllang=en_us",
 })
 
