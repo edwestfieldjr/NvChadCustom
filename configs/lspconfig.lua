@@ -44,6 +44,9 @@ local servers = {
     name = "tailwindcss",
   },
   {
+    name = "lua_ls",
+  },
+  {
     name = "textlsp",
   },
   {
@@ -60,12 +63,12 @@ local servers = {
   },
   {
     name = "rust_analyzer",
-    -- cmd = {
-    --   "rustup",
-    --   "run",
-    --   "stable",
-    --   "rust-analyzer",
-    -- },
+    cmd = {
+      "rustup",
+      "run",
+      "stable",
+      "rust-analyzer",
+    },
     settings = {
       ["rust-analyzer"] = {},
     },

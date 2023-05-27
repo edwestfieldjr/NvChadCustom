@@ -1,7 +1,7 @@
 local overrides = require "custom.configs.overrides"
 
 local edit_events =
-  { "TextChanged", "TextChangedI", "BufEnter", "BufLeave", "InsertEnter", "InsertChange", "InsertLeave" }
+  { "TextChanged", "TextChangedI", "BufEnter", "BufWinEnter", "BufLeave", "InsertEnter", "InsertChange", "InsertLeave" }
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -49,10 +49,10 @@ local plugins = {
     opts = overrides.colorizer,
   },
 
-  {
-    "hrsh7th/nvim-cmp",
-    opts = overrides.cmp,
-  },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   opts = overrides.cmp,
+  -- },
   ----------------------------------------------------------------
   -- Install a plugin
   {
