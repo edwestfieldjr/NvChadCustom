@@ -7,7 +7,6 @@ local lspconfig = require "lspconfig"
 local servers = {
   {
     name = "html",
-    -- cmd = { "vscode-html-language-server", "--stdio" },
   },
   {
     name = "cssls",
@@ -63,12 +62,6 @@ local servers = {
   },
   {
     name = "rust_analyzer",
-    cmd = {
-      "rustup",
-      "run",
-      "stable",
-      "rust-analyzer",
-    },
     settings = {
       ["rust-analyzer"] = {},
     },
@@ -79,7 +72,6 @@ for _, lsp in ipairs(servers) do
   lspconfig[lsp.name].setup {
     on_attach = on_attach,
     capabilities = capabilities,
-    cmd = lsp.cmd,
     setttings = lsp.settings,
   }
 end

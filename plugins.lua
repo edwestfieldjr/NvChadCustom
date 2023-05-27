@@ -49,6 +49,7 @@ local plugins = {
     opts = overrides.colorizer,
   },
 
+
   -- {
   --   "hrsh7th/nvim-cmp",
   --   opts = overrides.cmp,
@@ -94,7 +95,7 @@ local plugins = {
     build = "./dl_binaries.sh",
   },
 
-  -- installed by user on 2023-05-20: https://github.com/
+  -- installed by user on 2023-05-20: https://github.com/stevearc/oil.nvim
   {
     "stevearc/oil.nvim",
     opts = {
