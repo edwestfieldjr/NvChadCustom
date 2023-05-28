@@ -49,7 +49,6 @@ local plugins = {
     opts = overrides.colorizer,
   },
 
-
   -- {
   --   "hrsh7th/nvim-cmp",
   --   opts = overrides.cmp,
@@ -83,9 +82,8 @@ local plugins = {
     config = function()
       require("tabnine").setup {
         disable_auto_comment = true,
-        -- accept_keymap = "<Tab>",
-        accept_keymap = "<C-[>", -- Changed to avoid conflicts w/ default snippet plugins (nvim-cmp/LuaSnip)
-        dismiss_keymap = "<C-]>",
+        accept_keymap = "<Right>",
+        dismiss_keymap = "<Esc>",
         debounce_ms = 800,
         suggestion_color = { gui = "#808080", cterm = 244 },
         exclude_filetypes = { "TelescopePrompt" },
