@@ -120,6 +120,17 @@ local plugins = {
     end,
   },
 
+  {
+    "mg979/vim-visual-multi",
+    event = edit_events,
+    init = function()
+      vim.cmd("let g:VM_maps = {}")
+      vim.cmd("let g:VM_maps['Find Under'] = '<C-b>'")
+      vim.cmd("let g:VM_maps['Find Subword Under'] = '<C-b>'")
+    end,
+--      override to ensure lsp automatically on new/open file
+  },
+
   ----------------------------------------------------------------
   -- Development plugins
 
