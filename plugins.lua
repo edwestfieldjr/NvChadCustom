@@ -3,7 +3,7 @@ local overrides = require "custom.configs.overrides"
 local edit_events =
   { "TextChanged", "TextChangedI", "BufEnter", "BufWinEnter", "BufLeave", "InsertEnter", "InsertChange", "InsertLeave" }
 
----@type NvPluginSpec[]
+--@type NvPluginSpec[]
 local plugins = {
 
   -- Override plugin definition options
@@ -28,6 +28,14 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "f3fora/cmp-spell",
+    },
+    opts = overrides.cmp,
+  },
+
   -- override plugin configs
   {
     "williamboman/mason.nvim",
@@ -49,10 +57,6 @@ local plugins = {
     opts = overrides.colorizer,
   },
 
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   opts = overrides.cmp,
-  -- },
   ----------------------------------------------------------------
   -- Install a plugin
   {

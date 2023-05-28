@@ -12,11 +12,18 @@ local autocmd = vim.api.nvim_create_autocmd
 --   command = "lua vim.lsp.buf.format()",
 -- })
 
--- -- Load classic vim spell check
+-- Load classic vim spell check
 -- autocmd("BufEnter", {
 --   pattern = { "<buffer>" },
 --   command = "set spell spelllang=en_us",
 -- })
+
+autocmd({ "BufEnter", "BufWinEnter" }, {
+  callback = function()
+    vim.opt.spell = true
+    vim.opt.spelllang = { "en_us" }
+  end,
+})
 
 -- Show the nvim-tree upon open
 autocmd({ "BufNewFile", "BufWinEnter" }, {
