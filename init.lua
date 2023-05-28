@@ -18,7 +18,8 @@ local autocmd = vim.api.nvim_create_autocmd
 --   command = "set spell spelllang=en_us",
 -- })
 
-autocmd({ "BufEnter", "BufWinEnter" }, {
+autocmd({ "BufWritePre" }, {
+  pattern = { "<buffer>" },
   callback = function()
     vim.opt.spell = true
     vim.opt.spelllang = { "en_us" }
@@ -45,4 +46,4 @@ autocmd({ "BufNewFile", "BufWinEnter" }, {
 --     vim.bo[args.buf].formatexpr = nil
 --   end,
 -- })
--- -- Overall, Unnecessary
+-- -- Overall, Unnecessary:

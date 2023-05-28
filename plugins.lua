@@ -28,13 +28,13 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "f3fora/cmp-spell",
-    },
-    opts = overrides.cmp,
-  },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   dependencies = {
+  --     "f3fora/cmp-spell",
+  --   },
+  --   opts = overrides.cmp,
+  -- },
 
   -- override plugin configs
   {
