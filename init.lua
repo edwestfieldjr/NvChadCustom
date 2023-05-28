@@ -18,11 +18,11 @@ local autocmd = vim.api.nvim_create_autocmd
 --   command = "set spell spelllang=en_us",
 -- })
 
-autocmd({ "BufWritePre" }, {
+autocmd({ "BufEnter", "BufWinEnter" }, {
   pattern = { "<buffer>" },
   callback = function()
-    vim.opt.spell = true
-    vim.opt.spelllang = { "en_us" }
+    vim.opt_local.spell = true
+    vim.opt_local.spelllang = { "en_us" }
   end,
 })
 

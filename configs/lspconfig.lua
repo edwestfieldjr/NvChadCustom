@@ -43,9 +43,6 @@ local servers = {
     name = "tailwindcss",
   },
   {
-    name = "lua_ls",
-  },
-  {
     name = "textlsp",
   },
   {

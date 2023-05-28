@@ -10,7 +10,7 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
-    -- lazy = false, -- override to ensure lsp automatically on startup lazy
+    -- lazzy = false, -- override to ensure lsp automatically on startup lazy
     event = edit_events, -- override to ensure lsp automatically on new/open file
     dependencies = {
       -- format & linting
