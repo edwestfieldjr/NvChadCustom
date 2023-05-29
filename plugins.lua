@@ -120,13 +120,14 @@ local plugins = {
     end,
   },
 
+  -- installed by user on 2023-05-29: https://github.com/mg979/vim-visual-multi
   {
     "mg979/vim-visual-multi",
     event = edit_events,
     init = function()
       vim.cmd("let g:VM_maps = {}")
-      vim.cmd("let g:VM_maps['Find Under'] = '<C-b>'")
-      vim.cmd("let g:VM_maps['Find Subword Under'] = '<C-b>'")
+      vim.cmd("let g:VM_maps['Find Under'] = '<C-l>'")
+      vim.cmd("let g:VM_maps['Find Subword Under'] = '<C-l>'")
     end,
 --      override to ensure lsp automatically on new/open file
   },
