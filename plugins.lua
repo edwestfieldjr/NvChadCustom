@@ -8,7 +8,7 @@ local plugins = {
 
   -- Override plugin definition options
 
-  {
+ {
     "neovim/nvim-lspconfig",
     -- lazzy = false, -- override to ensure lsp automatically on startup lazy
     event = edit_events, -- override to ensure lsp automatically on new/open file
@@ -86,8 +86,8 @@ local plugins = {
     config = function()
       require("tabnine").setup {
         disable_auto_comment = true,
-        accept_keymap = "<Right>",
-        dismiss_keymap = "<Esc>",
+        accept_keymap = "<M-Tab>",
+        dismiss_keymap = "<M-Esc>",
         debounce_ms = 800,
         suggestion_color = { gui = "#808080", cterm = 244 },
         exclude_filetypes = { "TelescopePrompt" },
@@ -112,7 +112,7 @@ local plugins = {
       },
     },
     init = function()
-      vim.keymap.set("n", "-", require("oil").open_float, { desc = "Open parent directory" })
+      vim.keymap.set("n", "-", require("oil").open_float, { desc = "Open Oil (press '-' again for parent dir)" })
     end,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function(this)
@@ -125,11 +125,25 @@ local plugins = {
     "mg979/vim-visual-multi",
     event = edit_events,
     init = function()
-      vim.cmd("let g:VM_maps = {}")
-      vim.cmd("let g:VM_maps['Find Under'] = '<C-l>'")
-      vim.cmd("let g:VM_maps['Find Subword Under'] = '<C-l>'")
+      vim.cmd "let g:VM_maps = {}"
+      vim.cmd "let g:VM_maps['Find Under'] = '<C-l>'"
+      vim.cmd "let g:VM_maps['Find Subword Under'] = '<C-l>'"
     end,
---      override to ensure lsp automatically on new/open file
+    --      override to ensure lsp automatically on new/open file
+  },
+
+  -- installed by user on 2023-05-30: https://github.com/barrett-ruth/live-server.nvim
+  {
+    "barrett-ruth/live-server.nvim",
+    build = "npm i -g live-server",
+    ft = { "html", "css", "javascript" },
+    init = function()
+      vim.keymap.set("n", "=", ":LiveServerStart<CR>", { desc = "Start Live Server" })
+      vim.keymap.set("n", "<C-=>", ":LiveServerStop<CR>", { desc = "Stop Live Server" })
+    end,
+    config = function()
+      require("live-server").setup()
+    end,
   },
 
   ----------------------------------------------------------------
