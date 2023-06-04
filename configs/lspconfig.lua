@@ -69,6 +69,6 @@ for _, lsp in ipairs(servers) do
   lspconfig[lsp.name].setup {
     on_attach = on_attach,
     capabilities = capabilities,
-    setttings = lsp.settings,
+    settings = lsp.settings or {},
   }
 end

@@ -126,18 +126,19 @@ M.colorizer = {
   },
 }
 
-M.cmp = {
-  sources = {
-    {
-      name = "spell",
-      option = {
-        keep_all_entries = false,
-        enable_in_context = function()
-          return true
-        end,
-      },
-    },
-  },
-}
+--
+-- M.cmp = {
+--   sources = {
+--     {
+--       name = "spell",
+--       option = {
+--         keep_all_entries = false,
+--         enable_in_context = function()
+--           return true
+--         end,
+--       },
+--     },
+--   },
+-- }
 
 return M

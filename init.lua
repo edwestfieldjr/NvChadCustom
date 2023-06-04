@@ -39,6 +39,8 @@ autocmd({ "BufNewFile", "BufWinEnter" }, {
   end,
 })
 
+
+
 -- -- Fix null-ls/lsp formatter ('gq') issue:
 -- -- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/1131#issuecomment-1457584752
 -- autocmd('LspAttach', {
