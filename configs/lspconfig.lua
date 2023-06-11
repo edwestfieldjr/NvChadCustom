@@ -66,9 +66,16 @@ local servers = {
 }
 
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp.name].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = lsp.settings,
-  }
+  if lsp.name ~= "rust_analyzer" or lsp.name ~= "pylsp" then
+    lspconfig[lsp.name].setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+    }
+  else
+    lspconfig[lsp.name].setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      settings = lsp.settings,
+    }
+  end
 end

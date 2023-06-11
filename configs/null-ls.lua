@@ -4,14 +4,12 @@ if not present then
   return
 end
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
 local b = null_ls.builtins
 
 local sources = {
 
   -- webdev stuff
-  b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
+  b.formatting.deno_fmt, -- choosed [sic] deno for ts/js files cuz [sic] its very fast!
   b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
 
   -- Lua
@@ -30,13 +28,14 @@ local sources = {
   b.diagnostics.ruff,
 }
 
--- Enable formatting on save... delay of two seconds & supressed in insert mode
+-- Enable formatting on save/autosave... delay of two seconds & supressed in insert mode
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local last_save = 0
-local on_attach = function(cli, buf)
+local on_attach = function(cli, bufnr)
   if cli.supports_method "textDocument/formatting" then
     vim.api.nvim_clear_autocmds {
       group = augroup,
-      buffer = buf,
+      buffer = bufnr,
     }
     vim.api.nvim_create_autocmd({ "InsertEnter", "InsertChange" }, {
       callback = function()
@@ -45,12 +44,13 @@ local on_attach = function(cli, buf)
     })
     vim.api.nvim_create_autocmd({ "BufWrite", "BufWritePre", "BufWritePost", "BufLeave", "InsertLeave" }, {
       group = augroup,
-      buffer = buf,
+      buffer = bufnr,
       callback = function()
         local this_save = os.time()
-        if this_save - last_save > 2 then
+        -- only format if last save is greater than 2 second old
+        if this_save - last_save > 2 and last_save > 0 then
           last_save = this_save
-          vim.lsp.buf.format { bufnr = buf }
+          vim.lsp.buf.format { bufnr = bufnr }
         end
       end,
     })
@@ -63,6 +63,3 @@ null_ls.setup {
   sources = sources,
   on_attach = on_attach,
 }
-
-local pp = {}
---1!:
