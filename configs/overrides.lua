@@ -64,6 +64,10 @@ M.mason = {
     "pylint",
     "python-lsp-server",
     "pyright",
+    "mypy",
+    "ruff",
+    "black",
+    "debugpy",
 
     -- golang stuff
     "gopls",
