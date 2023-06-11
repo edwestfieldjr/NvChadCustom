@@ -60,9 +60,9 @@ M.mason = {
     "rustfmt",
 
     -- python stuff
-    "autopep8",
-    "pylint",
-    "python-lsp-server",
+    -- "autopep8",
+    -- "pylint",
+    -- "python-lsp-server",
     "pyright",
     "mypy",
     "ruff",

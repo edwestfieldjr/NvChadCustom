@@ -20,19 +20,19 @@ local servers = {
   {
     name = "pyright",
   },
-  {
-    name = "pylsp",
-    settings = {
-      pylsp = {
-        plugins = {
-          pycodestyle = {
-            ignore = { "W391" },
-            maxLineLength = 100,
-          },
-        },
-      },
-    },
-  },
+  -- {
+  --   name = "pylsp",
+  --   settings = {
+  --     pylsp = {
+  --       plugins = {
+  --         pycodestyle = {
+  --           ignore = { "W391" },
+  --           maxLineLength = 100,
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
   {
     name = "csharp_ls",
   },
@@ -69,6 +69,6 @@ for _, lsp in ipairs(servers) do
   lspconfig[lsp.name].setup {
     on_attach = on_attach,
     capabilities = capabilities,
-    settings = lsp.settings or {},
+    settings = lsp.settings,
   }
 end
