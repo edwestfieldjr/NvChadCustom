@@ -15,9 +15,6 @@ local servers = {
     name = "tsserver",
   },
   {
-    name = "denols",
-  },
-  {
     name = "clangd",
   },
   {

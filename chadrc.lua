@@ -10,7 +10,7 @@ M.ui = {
 
   hl_override = highlights.override,
   hl_add = highlights.add,
-    nvdash = {
+  nvdash = {
     load_on_startup = true,
     header = {
       "01010100 01101000 01101001 01110011 ",
