@@ -20,19 +20,6 @@ local servers = {
   {
     name = "pyright",
   },
-  -- {
-  --   name = "pylsp",
-  --   settings = {
-  --     pylsp = {
-  --       plugins = {
-  --         pycodestyle = {
-  --           ignore = { "W391" },
-  --           maxLineLength = 100,
-  --         },
-  --       },
-  --     },
-  --   },
-  -- },
   {
     name = "csharp_ls",
   },
@@ -66,16 +53,9 @@ local servers = {
 }
 
 for _, lsp in ipairs(servers) do
-  if lsp.name ~= "rust_analyzer" or lsp.name ~= "pylsp" then
-    lspconfig[lsp.name].setup {
-      on_attach = on_attach,
-      capabilities = capabilities,
-    }
-  else
-    lspconfig[lsp.name].setup {
-      on_attach = on_attach,
-      capabilities = capabilities,
-      settings = lsp.settings,
-    }
-  end
+  lspconfig[lsp.name].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = lsp.settings or {},
+  }
 end

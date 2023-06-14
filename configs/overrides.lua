@@ -8,6 +8,7 @@ M.treesitter = {
     "css",
     "java",
     "javascript",
+    "jsdoc",
     "typescript",
     "tsx",
     "c",
@@ -60,9 +61,6 @@ M.mason = {
     "rustfmt",
 
     -- python stuff
-    -- "autopep8",
-    -- "pylint",
-    -- "python-lsp-server",
     "pyright",
     "mypy",
     "ruff",
