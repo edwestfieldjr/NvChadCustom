@@ -52,10 +52,14 @@ local servers = {
   },
 }
 
+local opts = {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp.name].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = lsp.settings or {},
-  }
+  if lsp.settings then
+    opts.settings = lsp.settings
+  end
+  lspconfig[lsp.name].setup(opts)
 end

@@ -10,13 +10,11 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
-    -- lazzy = false, -- override to ensure lsp automatically on startup lazy
     event = edit_events, -- override to ensure lsp automatically on new/open file
     dependencies = {
       -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
-        -- lazy = false, -- override 2023-05-22
         config = function()
           require "custom.configs.null-ls"
         end,
