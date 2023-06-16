@@ -1,7 +1,21 @@
 local overrides = require "custom.configs.overrides"
 
-local edit_events =
-  { "TextChanged", "TextChangedI", "BufEnter", "BufWinEnter", "BufLeave", "InsertEnter", "InsertChange", "InsertLeave" }
+local edit_events = {
+  "TextChanged",
+  "TextChangedI",
+  "BufEnter",
+  "BufWinEnter",
+  "BufLeave",
+  "InsertEnter",
+  "InsertChange",
+  "InsertLeave",
+  "BufNewFile",
+  "BufReadPre",
+  "BufRead",
+  "BufReadPost",
+  "FileReadPre",
+  "FileReadPost",
+}
 
 --@type NvPluginSpec[]
 local plugins = {
