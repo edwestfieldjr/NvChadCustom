@@ -42,7 +42,7 @@ local on_attach = function(cli, bufnr)
         last_save = os.time()
       end,
     })
-    vim.api.nvim_create_autocmd({ "BufWrite", "BufWritePre", "BufWritePost" }, {
+    vim.api.nvim_create_autocmd({ "BufWrite", "BufWritePre", "BufWritePost", "FileWritePre", "FileWritePost" }, {
       group = augroup,
       buffer = bufnr,
       callback = function()
