@@ -20,6 +20,7 @@ M.treesitter = {
     "cpp",
     "zig",
     "sql",
+    "ocaml",
   },
   indent = {
     enable = true,
@@ -31,11 +32,11 @@ M.treesitter = {
 
 M.mason = {
   ensure_installed = {
-    -- lua stuff
+    -- lua
     "lua-language-server",
     "stylua",
 
-    -- web dev stuff
+    -- web dev
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
@@ -45,39 +46,43 @@ M.mason = {
     "standardjs",
     "tailwindcss-language-server",
 
-    -- c/cpp stuff
+    -- c/cpp
     "clangd",
     "clang-format",
 
-    -- c# stuff
+    -- c#
     "csharp-language-server",
     "netcoredbg",
 
-    -- java stuff
+    -- java
     "jdtls",
 
-    -- rust stuff
+    -- rust
     "rust-analyzer",
     "rustfmt",
 
-    -- python stuff
+    -- python
     "pyright",
     "mypy",
     "ruff",
     "black",
     "debugpy",
 
-    -- golang stuff
+    -- golang
     "gopls",
 
-    -- zig stuff
+    -- zig
     "zls",
 
-    -- sql stuff
+    -- sql
     "sqlls",
 
-    --text file stuff
+    --text files
     "grammarly-languageserver",
+
+    --ocaml
+    "ocaml-lsp",
+    "ocamlformat",
   },
 }
 
