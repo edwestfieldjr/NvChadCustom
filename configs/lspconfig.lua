@@ -36,9 +36,6 @@ local servers = {
     name = "gopls",
   },
   {
-    name = "ocamlls",
-  },
-  {
     name = "ocamllsp",
   },
   {
