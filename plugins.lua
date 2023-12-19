@@ -93,7 +93,7 @@ local plugins = {
   -- installed by user on 2023-05-16: https://github.com/codota/tabnine-nvim
   {
     "codota/tabnine-nvim",
-    event = edit_events,
+    -- event = edit_events,
     -- lazy = false,
     config = function()
       require("tabnine").setup {
