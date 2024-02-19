@@ -22,19 +22,19 @@ M.ui = {
     },
   },
 
-  tabufline = {
-    show_numbers = false,
-    enabled = true,
-    lazyload = false,
-    overriden_modules = function()
-      local modules = require "nvchad_ui.tabufline.modules"
-      return {
-        buttons = function()
-          return modules.buttons() .. "" -- TBD: Insert a Display Clock Function
-        end,
-      }
-    end,
-  },
+  -- tabufline = {
+  --   show_numbers = false,
+  --   enabled = true,
+  --   lazyload = false,
+  --   overriden_modules = function()
+  --     local modules = require "nvchad_ui.tabufline.modules"
+  --     return {
+  --       buttons = function()
+  --         return modules.buttons() .. "" -- TBD: Insert a Display Clock Function
+  --       end,
+  --     }
+  --   end,
+  -- },
 }
 
 M.plugins = "custom.plugins"
