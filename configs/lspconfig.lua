@@ -29,9 +29,9 @@ local servers = {
   {
     name = "tailwindcss",
   },
-  {
-    name = "textlsp",
-  },
+  -- {
+  --   name = "textlsp",
+  -- },
   {
     name = "gopls",
   },
